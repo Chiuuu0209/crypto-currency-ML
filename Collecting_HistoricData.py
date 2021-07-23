@@ -16,8 +16,9 @@ if __name__ == "__main__":
         s = str(month[i])
         e = str(month[i+1])
         g = str(GRANULARITY)
-        print(i," :　",month[i],month[i+1])
-        print(f"python3 Get_rawdata.py -c \"{c}\" -s \"{s}\" -e \"{e}\" -g {g}")
+        # print(i," :　",month[i],month[i+1])
+        # print(f"python3 Get_rawdata.py -c \"{c}\" -s \"{s}\" -e \"{e}\" -g {g}")
+        os.system(f"python3 Get_rawdata.py -c \"{c}\" -s \"{s}\" -e \"{e}\" -g {g}")
 
     
 
