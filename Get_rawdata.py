@@ -24,7 +24,6 @@ class CoinbaseAPI:
         data = []
         start_date = datetime.datetime.strptime(start, "%Y-%m-%d")
         end_date = datetime.datetime.strptime(end, "%Y-%m-%d")
-
         while (start_date < end_date):
             print("> Date: ",start_date)
             start_limit = start_date

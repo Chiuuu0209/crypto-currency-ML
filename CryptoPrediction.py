@@ -21,11 +21,22 @@ MAX_EPOCHS = 30
 # for record history and plot
 val_performance = {}
 performance = {}
-multi_val_performance = {}
-multi_performance = {}
 
 raw_data = pd.read_csv(file_path)
+date_time = raw_data.pop('time')
 
+day = 24*60*60
+year = (365.2425)*day
+
+raw_data['Day sin'] = np.sin(date_time * (2 * np.pi / day))
+raw_data['Day cos'] = np.cos(date_time * (2 * np.pi / day))
+raw_data['Year sin'] = np.sin(date_time * (2 * np.pi / year))
+raw_data['Year cos'] = np.cos(date_time * (2 * np.pi / year))
 
 mpl.rcParams['figure.figsize'] = (8, 6)
 mpl.rcParams['axes.grid'] = False
+
+plt.plot(np.array(raw_data['Day sin'])[:2500])
+plt.plot(np.array(raw_data['Day cos'])[:2500])
+plt.xlabel('Time [h]')
+plt.title('Time of day signal')
